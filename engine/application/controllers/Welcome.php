@@ -25,6 +25,6 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		//$this->load->view('home');
-		$this->template->base('home');
+		$this->load->view('form');
 	}
 }

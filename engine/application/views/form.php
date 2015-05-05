@@ -8,14 +8,56 @@
     margin-top: 20px;
     }
     </style>
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    body {
+        padding-top: 70px;
+    }
+    </style>
 </head>
 
 <body>
+<!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">PKI - Certificate Maker</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Login</a>
+                    </li>
+                    <li>
+                        <a href="#">Register</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
 <form id="installationForm" class="form-horizontal">
     <ul class="nav nav-pills">
-        <li class="active"><a href="#basic-tab" data-toggle="tab">Site information</a></li>
+        <li class="active"><a href="#basic-tab" data-toggle="tab">Basic information</a></li>
         <li><a href="#csr-tab" data-toggle="tab">CSR Information</a></li>
-        <li><a href="#database-tab" data-toggle="tab">Database</a></li>
+        <li><a href="#login-tab" data-toggle="tab">Login Information</a></li>
     </ul>
 
 
@@ -23,9 +65,16 @@
         <!-- First tab -->
         <div class="tab-pane active" id="basic-tab">
             <div class="form-group">
-                <label class="col-xs-3 control-label">Site name</label>
+                <label class="col-xs-3 control-label">Name</label>
                 <div class="col-xs-5">
                     <input type="text" class="form-control" name="name" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-3 control-label">Organization name</label>
+                <div class="col-xs-5">
+                    <input type="text" class="form-control" name="org-name" />
                 </div>
             </div>
 
@@ -37,9 +86,33 @@
             </div>
 
             <div class="form-group">
-                <label class="col-xs-3 control-label">Owner email</label>
+                <label class="col-xs-3 control-label">Address</label>
                 <div class="col-xs-5">
-                    <input type="text" class="form-control" name="email" />
+                    <input type="text" class="form-control" name="address" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-3 control-label">City</label>
+                <div class="col-xs-5">
+                    <input type="text" class="form-control" name="city" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-3 control-label">Postal Code</label>
+                <div class="col-xs-5">
+                    <input type="text" class="form-control" name="pos-code" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-3 control-label">Country</label>
+                <div class="col-xs-5">
+                    <select class="form-control" name="country" />
+                        <option><!-- Isi sama database country -->
+                        </option>
+                    </select>
                 </div>
             </div>
 
@@ -69,32 +142,18 @@
             </div>
         </div>
         <!-- Second tab -->
-        <div class="tab-pane" id="database-tab">
+        <div class="tab-pane" id="login-tab">
             <div class="form-group">
-                <label class="col-xs-3 control-label">Server IP</label>
+                <label class="col-xs-3 control-label">Username</label>
                 <div class="col-xs-5">
-                    <input type="text" class="form-control" name="dbServer" />
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-xs-3 control-label">Database name</label>
-                <div class="col-xs-5">
-                    <input type="text" class="form-control" name="dbName" />
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-xs-3 control-label">Database user</label>
-                <div class="col-xs-5">
-                    <input type="text" class="form-control" name="dbUser" />
+                    <input type="text" class="form-control" name="User" />
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-xs-3 control-label">Password</label>
                 <div class="col-xs-5">
-                    <input type="password" class="form-control" name="dbPassword" />
+                    <input type="password" class="form-control" name="Password" />
                 </div>
             </div>
         </div>
@@ -153,7 +212,14 @@ $(document).ready(function() {
                 name: {
                     validators: {
                         notEmpty: {
-                            message: 'The site name is required'
+                            message: 'The name is required'
+                        }
+                    }
+                },
+                org-name: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The organization name is required'
                         }
                     }
                 },
@@ -167,13 +233,24 @@ $(document).ready(function() {
                         }
                     }
                 },
-                email: {
+                address: {
                     validators: {
                         notEmpty: {
-                            message: 'The email address is required'
-                        },
-                        emailAddress: {
-                            message: 'The email address is not valid'
+                            message: 'The address is required'
+                        }
+                    }
+                },
+                city: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The city is required'
+                        }
+                    }
+                },
+                pos-code: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The postal code is required'
                         }
                     }
                 },
@@ -184,27 +261,10 @@ $(document).ready(function() {
                         }
                     }
                 },
-                dbServer: {
+                Username: {
                     validators: {
                         notEmpty: {
-                            message: 'The server IP is required'
-                        },
-                        ip: {
-                            message: 'The server IP is not valid'
-                        }
-                    }
-                },
-                dbName: {
-                    validators: {
-                        notEmpty: {
-                            message: 'The database name is required'
-                        }
-                    }
-                },
-                dbUser: {
-                    validators: {
-                        notEmpty: {
-                            message: 'The database user is required'
+                            message: 'The username is required'
                         }
                     }
                 }

@@ -1,6 +1,10 @@
-<div class="bs-example">
-<h1 style="margin-top : 150px;" class="box">Selamat Datang</h1>
-</div>
-<div class="highlight">
-	hello world
-</div>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+   <title>Simple Login with CodeIgniter - Private Area</title>
+ </head>
+ <body>
+   <h1>Home</h1>
+   <h2>Welcome <?php echo $username; ?>!</h2>
+   <a href="home/logout">Logout</a>
+ </body>
+</html>

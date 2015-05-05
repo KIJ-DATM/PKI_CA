@@ -1,5 +1,4 @@
 <html>
-
 <head>
    <title>PKI-CA </title>
     <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />

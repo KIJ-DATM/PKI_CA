@@ -1,0 +1,92 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 181684660067190 (0xa53dc19fdb76)
+    Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=ID, ST=Jawa Timur, L=Surabaya, O=SevenLayer Security Inc., OU=SevenLayer Security Certificate Issuer, CN=SevenLayer Security Unified CA/emailAddress=admin@azurehero.com
+        Validity
+            Not Before: May  5 20:42:11 2015 GMT
+            Not After : May  4 20:42:11 2016 GMT
+        Subject: C=ID, ST=Jawa Timur, L=Surabaya, O=CACoba, OU=CAUnit, CN=cacoba
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:b9:5f:9a:10:e3:60:ed:b0:19:88:9f:8b:21:41:
+                    54:0a:19:53:42:47:32:79:46:22:52:d6:1c:a2:cb:
+                    28:76:e8:00:19:ac:00:24:b2:79:be:f1:5a:81:9b:
+                    8b:f4:f7:af:c4:43:c4:49:f4:48:b3:62:33:7b:05:
+                    6d:e5:43:5c:d0:25:dc:ca:66:6b:a9:68:41:d7:f4:
+                    be:b4:8d:df:c4:1e:63:50:c0:d3:0b:17:60:8a:e5:
+                    d9:03:f1:7c:92:a5:a2:ce:47:a3:a7:ad:35:f4:83:
+                    2e:05:ab:05:f2:4b:60:bd:a9:9d:45:4a:65:d4:91:
+                    4b:21:f2:b9:d8:29:41:86:3e:6c:ee:c6:0a:80:c1:
+                    93:3f:5a:46:36:ac:67:62:c0:4f:40:c5:fb:c1:dd:
+                    c3:a5:17:6f:4a:29:34:3e:de:5d:72:15:ae:c3:18:
+                    d9:e4:33:5c:f1:88:a4:d0:d3:72:5f:dd:0f:58:53:
+                    c9:7a:12:0c:46:66:04:8a:1a:c4:ca:0c:c3:2a:67:
+                    91:6b:82:d2:53:0a:fe:cd:95:02:6b:33:8c:97:b5:
+                    7a:8f:9e:c5:b7:6e:5f:10:35:53:15:c8:57:a3:fd:
+                    6c:81:e7:c1:86:48:f5:af:29:bb:11:14:41:30:5d:
+                    42:a5:fd:00:d8:df:4b:62:dd:a7:d4:3e:00:64:79:
+                    75:89
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:TRUE
+            X509v3 Subject Key Identifier: 
+                01:FD:12:06:D6:33:71:B7:DB:8D:DE:94:D3:C2:55:8A:56:85:C7:CD
+            X509v3 Authority Key Identifier: 
+                keyid:8E:03:F2:AA:B2:DA:02:AC:63:65:ED:FB:C8:49:80:7E:75:B3:AF:F0
+
+            X509v3 Key Usage: critical
+                Certificate Sign, CRL Sign
+            X509v3 Issuer Alternative Name: 
+                <EMPTY>
+
+            X509v3 CRL Distribution Points: 
+
+                Reasons:
+                  Key Compromise, CA Compromise, Privilege Withdrawn
+
+    Signature Algorithm: sha256WithRSAEncryption
+         b6:ce:a1:c5:d3:91:0e:1a:64:f1:50:61:ac:31:4f:bb:c9:8a:
+         78:3f:42:68:93:a8:4a:ed:24:71:62:58:f4:ca:ed:23:c7:08:
+         d3:ff:3c:61:58:68:7e:37:cd:35:45:67:ff:8a:3d:bc:20:20:
+         b3:29:fc:ab:b1:52:0e:0c:95:ec:e3:29:9a:54:3f:e4:06:bb:
+         34:d4:46:e7:1d:3f:ea:18:a2:49:c7:79:ed:c0:e5:f8:fb:a7:
+         9b:d0:83:86:85:e3:be:2f:8e:29:3c:a4:5f:01:46:bb:99:e0:
+         27:9b:8d:be:15:0d:c6:12:a4:4c:d3:1d:6a:fe:ea:4e:00:87:
+         66:c8:36:3e:c1:a8:09:a7:84:8f:71:65:04:7a:71:f3:fa:7b:
+         ae:34:73:06:a0:e1:49:ad:29:10:85:75:aa:1b:72:73:2e:3c:
+         ca:bf:c2:23:95:40:a9:9b:a8:88:81:44:5d:60:17:ff:65:f8:
+         d2:93:fa:00:9b:5a:99:62:24:17:11:ef:39:8c:ab:5d:55:c4:
+         9e:42:86:85:91:2d:3c:9d:30:22:84:ec:0d:27:23:6b:ce:36:
+         7f:18:da:46:76:49:6d:c5:97:1d:99:99:77:2a:eb:97:87:61:
+         6d:54:41:da:b3:4a:18:c4:d6:ba:c1:ea:1a:2f:d1:d4:09:3c:
+         c2:0b:f7:6b
+-----BEGIN CERTIFICATE-----
+MIIEPDCCAySgAwIBAgIHAKU9wZ/bdjANBgkqhkiG9w0BAQsFADCB1jELMAkGA1UE
+BhMCSUQxEzARBgNVBAgMCkphd2EgVGltdXIxETAPBgNVBAcMCFN1cmFiYXlhMSEw
+HwYDVQQKDBhTZXZlbkxheWVyIFNlY3VyaXR5IEluYy4xLzAtBgNVBAsMJlNldmVu
+TGF5ZXIgU2VjdXJpdHkgQ2VydGlmaWNhdGUgSXNzdWVyMScwJQYDVQQDDB5TZXZl
+bkxheWVyIFNlY3VyaXR5IFVuaWZpZWQgQ0ExIjAgBgkqhkiG9w0BCQEWE2FkbWlu
+QGF6dXJlaGVyby5jb20wHhcNMTUwNTA1MjA0MjExWhcNMTYwNTA0MjA0MjExWjBo
+MQswCQYDVQQGEwJJRDETMBEGA1UECAwKSmF3YSBUaW11cjERMA8GA1UEBwwIU3Vy
+YWJheWExDzANBgNVBAoMBkNBQ29iYTEPMA0GA1UECwwGQ0FVbml0MQ8wDQYDVQQD
+DAZjYWNvYmEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC5X5oQ42Dt
+sBmIn4shQVQKGVNCRzJ5RiJS1hyiyyh26AAZrAAksnm+8VqBm4v096/EQ8RJ9Eiz
+YjN7BW3lQ1zQJdzKZmupaEHX9L60jd/EHmNQwNMLF2CK5dkD8XySpaLOR6OnrTX0
+gy4FqwXyS2C9qZ1FSmXUkUsh8rnYKUGGPmzuxgqAwZM/WkY2rGdiwE9AxfvB3cOl
+F29KKTQ+3l1yFa7DGNnkM1zxiKTQ03Jf3Q9YU8l6EgxGZgSKGsTKDMMqZ5FrgtJT
+Cv7NlQJrM4yXtXqPnsW3bl8QNVMVyFej/WyB58GGSPWvKbsRFEEwXUKl/QDY30ti
+3afUPgBkeXWJAgMBAAGjfDB6MAwGA1UdEwQFMAMBAf8wHQYDVR0OBBYEFAH9EgbW
+M3G3243elNPCVYpWhcfNMB8GA1UdIwQYMBaAFI4D8qqy2gKsY2Xt+8hJgH51s6/w
+MA4GA1UdDwEB/wQEAwIBBjAJBgNVHRIEAjAAMA8GA1UdHwQIMAYwBIECAGEwDQYJ
+KoZIhvcNAQELBQADggEBALbOocXTkQ4aZPFQYawxT7vJing/QmiTqErtJHFiWPTK
+7SPHCNP/PGFYaH43zTVFZ/+KPbwgILMp/KuxUg4MlezjKZpUP+QGuzTURucdP+oY
+oknHee3A5fj7p5vQg4aF474vjik8pF8BRruZ4Cebjb4VDcYSpEzTHWr+6k4Ah2bI
+Nj7BqAmnhI9xZQR6cfP6e640cwag4UmtKRCFdaobcnMuPMq/wiOVQKmbqIiBRF1g
+F/9l+NKT+gCbWpliJBcR7zmMq11VxJ5ChoWRLTydMCKE7A0nI2vONn8Y2kZ2SW3F
+lx2ZmXcq65eHYW1UQdqzShjE1rrB6hov0dQJPMIL92s=
+-----END CERTIFICATE-----

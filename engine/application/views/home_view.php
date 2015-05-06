@@ -4,7 +4,7 @@
  </head>
  <body>
    <h1>Home</h1>
-   <h2>Welcome <?php echo $username; ?>!</h2>
-   <a href="home/logout">Logout</a>
+   <h2>Welcome <?php //echo $username; ?>!</h2>
+    <a href="<?php echo base_url(); ?>verifyLogin/user_logout">Log Out</a>
  </body>
 </html>

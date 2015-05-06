@@ -5,8 +5,12 @@
  </head>
  <body>
    <h1>Simple Login with CodeIgniter</h1>
-   <?php echo validation_errors(); ?>
-   <?php echo form_open('verifylogin'); ?>
+   <?php
+        if (isset($alert_msg)) {
+          echo $alert_msg;
+        }
+      ?>   
+      <form action="<?php echo base_url(); ?>verifylogin/user_login" method="post">
      <label for="username">Username:</label>
      <input type="text" size="20" id="username" name="username"/>
      <br/>

@@ -5,56 +5,52 @@ class VerifyLogin extends CI_Controller {
  function __construct()
  {
    parent::__construct();
-   $this->load->model('user','',TRUE);
  }
 
  function index()
  {
-   //This method will have the credentials validation
-   $this->load->library('form_validation');
-
-   $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
-   $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|callback_check_database');
-
-   if($this->form_validation->run() == FALSE)
-   {
-     //Field validation failed.  User redirected to login page
-     $this->load->view('login_view');
-   }
-   else
-   {
-     //Go to private area
-     redirect('home', 'refresh');
-   }
-
+    echo $this->session->userdata('user_access');
+    if($this->session->userdata('user_access') == null) {
+      $this->user_login();
+    }
+    else if ($this->session->userdata('user_access') == 1) {
+      redirect(base_url() . 'home');
+    }
+    else if ($this->session->userdata('user_access') == 2) {
+      redirect(base_url() . 'home2');
+    }
  }
 
- function check_database($password)
- {
-   //Field validation succeeded.  Validate against database
-   $username = $this->input->post('username');
+ public function user_login() {
 
-   //query the database
-   $result = $this->user->login($username, $password);
+    $this->load->model('user');
+    $username = $this->input->post('username');
+    $password = $this->input->post('password');
 
-   if($result)
-   {
-     $sess_array = array();
-     foreach($result as $row)
-     {
-       $sess_array = array(
-         'id' => $row->id,
-         'username' => $row->username
-       );
-       $this->session->set_userdata('logged_in', $sess_array);
-     }
-     return TRUE;
-   }
-   else
-   {
-     $this->form_validation->set_message('check_database', 'Invalid username or password');
-     return false;
-   }
- }
+    if($username && $password){
+      $ac = $this->user->login($username,$password);
+      if ($ac != -1) {
+        echo $ac->user_access;
+        $userdata = array('id' => $id, 'user_access' => $ac->user_access);
+        $this->session->set_userdata($userdata);
+        $this->index();
+       }
+      else {
+        $data = array ('alert_msg' => 'ID atau kata sandi salah');
+        $this->load->view('login_view', $data);
+      }
+    }
+    else {
+        $this->load->view('login_view');
+    }
+
 }
+
+public function user_logout() {
+    $this->session->unset_userdata('user_access');
+    $this->session->unset_userdata('id');
+    $this->user_login();
+  }
+}
+
 ?>

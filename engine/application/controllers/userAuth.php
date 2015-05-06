@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class VerifyLogin extends CI_Controller {
+class UserAuth extends CI_Controller {
 
  function __construct()
  {
@@ -12,9 +12,6 @@ class VerifyLogin extends CI_Controller {
     echo $this->session->userdata('user_access');
     if($this->session->userdata('user_access') == null) {
       $this->user_login();
-    }
-    else if ($this->session->userdata('user_access') == 1) {
-      redirect(base_url() . 'home');
     }
     else if ($this->session->userdata('user_access') == 2) {
       redirect(base_url() . 'home2');
@@ -28,20 +25,31 @@ class VerifyLogin extends CI_Controller {
     $password = $this->input->post('password');
 
     if($username && $password){
+      if($username == "admin" && $password="pk1-d4tm")
+      {
+        //redirect(base_url() . 'home');
+        $this->load->view('admin-cert-list');
+      }
+
       $ac = $this->user->login($username,$password);
       if ($ac != -1) {
-        echo $ac->user_access;
-        $userdata = array('id' => $id, 'user_access' => $ac->user_access);
+        //echo $ac->user_access;
+        //$userdata = array('id' => $id, 'user_access' => $ac->user_access);
+        $userdata = array('id' => $id);
         $this->session->set_userdata($userdata);
-        $this->index();
+        //$this->index();
+        //redirect(base_url() . 'home2');
+        $this->load->view('user-page');
        }
       else {
-        $data = array ('alert_msg' => 'ID atau kata sandi salah');
-        $this->load->view('login_view', $data);
+
+        echo 'login gagal';
+        //$data = array ('alert_msg' => 'ID atau kata sandi salah');
+        //$this->load->view('login_view', $data);
       }
     }
     else {
-        $this->load->view('login_view');
+        $this->load->view('form_login');
     }
 
 }

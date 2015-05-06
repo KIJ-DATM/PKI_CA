@@ -5,7 +5,7 @@ class CreateCertificate extends CI_Controller {
  function __construct()
  {
    parent::__construct();
-   $this->load->model();
+   $this->load->model('certRequest');
  }
 
  function index()
@@ -15,11 +15,15 @@ class CreateCertificate extends CI_Controller {
       return;
     }*/
 
-    $this->load->view("home_view");
+    $this->load->view("admin-cert-detail");
+ }
+
+ function showCertRequest(){
+ 	$data['query'] = $this->certRequest->certRequest->getAllCertRequest();
  }
 
 function selfCertificate(){
-
+	
 
 	$dn = array(
 	    "countryName" => "UK",

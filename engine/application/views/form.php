@@ -64,6 +64,9 @@
     <div class="tab-content">
         <!-- First tab -->
         <div class="tab-pane active" id="basic-tab">
+            
+            <form action="<?php echo base_url(); ?>formController/createRequest" method="post">
+            
             <div class="form-group">
                 <label class="col-xs-3 control-label">Name</label>
                 <div class="col-xs-5">
@@ -164,6 +167,7 @@
             <li class="next"><a href="javascript: void(0);">Next</a></li>
         </ul>
     </div>
+
 </form>
 
 <div class="modal fade" id="completeModal" tabindex="-1" role="dialog">

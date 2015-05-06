@@ -4,12 +4,7 @@
    <title>Simple Login with CodeIgniter</title>
  </head>
  <body>
-   <h1>Simple Login with CodeIgniter</h1>
-   <?php
-        if (isset($alert_msg)) {
-          echo $alert_msg;
-        }
-      ?>   
+   <h1>Simple Login with CodeIgniter</h1>  
       <form action="<?php echo base_url(); ?>verifylogin/user_login" method="post">
      <label for="username">Username:</label>
      <input type="text" size="20" id="username" name="username"/>

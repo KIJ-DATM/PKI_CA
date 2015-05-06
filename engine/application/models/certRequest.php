@@ -8,8 +8,14 @@ class CertRequest extends CI_Model
   
   function getAllCertRequest()
   {
-  	$query = $this->db->get('cert_request');
+  	$query = $this->db->select('*')->from('cert_request')->get();
     return $query->result();
+  }
+
+  function insertCertRequest($data)
+  {
+    // Inserting in Table(cert_request) of Database(kijcert)
+    $this->db->insert('cert_request', $data);
   }
 }
 ?>

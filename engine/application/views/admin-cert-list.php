@@ -75,7 +75,7 @@
             keterangan tombol Details:
             Details untuk menampilkan detail certificate request, nanti redirect ke page admin-cert-detail
         -->
-        <tr class="success">
+        <tr>
             <td></td>
             <td></td>
             <td></td>

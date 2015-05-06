@@ -1,13 +1,13 @@
 <?php
-class insert_ctrl extends CI_Controller 
+class FormController extends CI_Controller 
 {
 	function __construct() 
 	{
 		parent::__construct();
-		$this->load->model('insertrequest');
+		$this->load->model('certRequest');
 	}
 
-	function index()
+	function createRequest()
 	{
 		// Setting Values For Tabel Columns
 		$status = 0;
@@ -22,7 +22,7 @@ class insert_ctrl extends CI_Controller
 		'id_country' => $this->input->post('country')
 		);
 		// Transfering Data To Model
-		$this->insert_model->form_insert($data);
+		$this->certRequest->insertCertRequest($data);
 		// Loading View
 		$this->load->view('form');
 	}

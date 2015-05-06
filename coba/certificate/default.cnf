@@ -384,6 +384,36 @@ keyUsage		= critical, keyCertSign, cRLSign
 # Set certificate issuer
 issuerAltName		= issuer:copy
 
+[ root_ca ]		# Use this section as root CA only
+
+# Sign as intermediate CA
+basicConstraints	= CA:TRUE
+
+# PKIX Recommendation
+subjectKeyIdentifier	= hash
+authorityKeyIdentifier	= keyid:always,issuer
+
+# Set key usage for certificate	signing
+keyUsage		= critical, keyCertSign
+
+# Set certificate issuer
+issuerAltName		= issuer:copy
+
+[ crl_ca ]		# Use this section as CRL CA only
+
+# Sign as intermediate CA
+basicConstraints	= CA:TRUE
+
+# PKIX Recommendation
+subjectKeyIdentifier	= hash
+authorityKeyIdentifier	= keyid:always,issuer
+
+# Set key usage for certificate	signing
+keyUsage		= critical, cRLSign
+
+# Set certificate issuer
+issuerAltName		= issuer:copy
+
 [ generic_cert ]	# This section for use as personal certificate
 
 # Set as not CA certificate
@@ -428,8 +458,7 @@ certificatePolicies	= 2.23.140.1.2.1
 
 [ dv_dir_sect ]		# SubjectAltName for DV cert
 
-OU			= Domain Validated Certificate
-OU			= Refer to http://pki.azurehero.com for details
+OU			= Domain Validated Certificate. Refer to http://pki.azurehero.com for details
 
 [ ov_cert ]		# This section for use as DV certificate
 
@@ -505,6 +534,26 @@ authorityKeyIdentifier	= keyid:always,issuer
 
 # Set key usage for certificate	signing
 keyUsage		= critical, keyCertSign, cRLSign
+
+# Set certificate issuer
+issuerAltName		= issuer:copy
+
+# Set CRL locatiom
+crlDistributionPoints	= crldp_sect
+
+
+[ email_cert ]	# This section for use as developer certificate
+
+# Set as not CA certificate
+basicConstraints	= CA:FALSE
+
+# PKIX Recommendation
+subjectKeyIdentifier	= hash
+authorityKeyIdentifier	= keyid:always,issuer
+
+# Set key usage
+keyUsage		= digitalSignature, nonRepudiation
+extendedKeyUsage	= emailProtection, timeStamping
 
 # Set certificate issuer
 issuerAltName		= issuer:copy

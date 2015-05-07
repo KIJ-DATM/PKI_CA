@@ -1,7 +1,7 @@
 <?php
-class FormController extends CI_Controller 
+class FormController extends MY_Controller
 {
-	function __construct() 
+	function __construct()
 	{
 		parent::__construct();
 		$this->load->model('certRequest');

@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class VerifyLogin extends CI_Controller {
+class VerifyLogin extends MY_Controller {
 
  function __construct()
  {

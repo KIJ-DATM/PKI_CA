@@ -1,7 +1,7 @@
 <?php
-class insert_ctrl extends CI_Controller 
+class insert_ctrl extends MY_Controller
 {
-	function __construct() 
+	function __construct()
 	{
 		parent::__construct();
 		$this->load->model('insertrequest');

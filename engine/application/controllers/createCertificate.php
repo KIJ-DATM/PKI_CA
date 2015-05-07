@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 //session_start(); //we need to call PHP's session object to access it through CI
-class CreateCertificate extends CI_Controller {
+class CreateCertificate extends MY_Controller {
 
  function __construct()
  {
@@ -23,7 +23,7 @@ class CreateCertificate extends CI_Controller {
  }
 
 function selfCertificate(){
-	
+
 
 	$dn = array(
 	    "countryName" => "UK",

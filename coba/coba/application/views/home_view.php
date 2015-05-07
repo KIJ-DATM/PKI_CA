@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html>
 
   <head>
@@ -63,13 +62,20 @@
             </li>
           </ul>
           <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
+        <?php if($user_access==1){ ?>
+                <div class="form-group">
+		<label class="control-label">Hello, user</label>
+		</div>
+		<button type="submit" class="btn btn-success">Sign in</button>
+	<?php } else {?>
+                <div class="form-group">
+		<input type="text" placeholder="Username" class="form-control">
+		</div>
+		<div class="form-group">
+		<input type="password" placeholder="Password" class="form-control">
+		</div>
+		<button type="submit" class="btn btn-success">Sign out</button>
+                <?php } ?>
           </form>
         </div>
         <!--/.navbar-collapse -->
@@ -109,5 +115,4 @@
     </div>
     <!-- /container -->
   </body>
-
 </html>

@@ -10,7 +10,7 @@ Class User extends CI_Model
    $this -> db -> select('username, user_access');
    $this -> db -> where('username', $username);
    $this -> db -> where('password', MD5($password));
-   $query = $this -> db -> get('users', 1);
+   $query = $this -> db -> get('user', 1);
 
    if ($query->num_rows() != 1)
       return -1;

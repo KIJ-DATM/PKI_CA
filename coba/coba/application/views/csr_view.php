@@ -104,9 +104,13 @@
             <label class="control-label">Cert type</label>
             <div class="controls">
               <select class="form-control">
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
+                <option value="generic_cert">Generic Certificate</option>
+                <option value="dv_cert">DV Certificate</option>
+                <option value="ov_cert">OV Certificate</option>
+                <option value="ev_cert">EV Certificate</option>
+                <option value="special_cert">Special Certificate</option>
+                <option value="special_ca">Generic Certificate Authority</option>
+                <option value="email_cert">Email Certificate</option>
               </select>
             </div>
           </div>

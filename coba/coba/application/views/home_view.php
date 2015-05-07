@@ -2,7 +2,7 @@
 <html>
 
   <head>
-    <title>Jumbotron</title>
+    <title>Home - SL Security</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -27,13 +27,13 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active">
-              <a href="#">Home</a>
+              <a href="<?php echo base_url('home'); ?>">Home</a>
             </li>
             <li>
-              <a href="#about">About</a>
+              <a href="<?php echo base_url('home/about'); ?>">About</a>
             </li>
             <li>
-              <a href="#contact">SSL Trial</a>
+              <a href="<?php echo base_url('home/csr'); ?>">SSL Trial</a>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">SSL Certificates<b class="caret"></b></a>
@@ -61,20 +61,21 @@
               </ul>
             </li>
           </ul>
-          <form class="navbar-form navbar-right">
+          <?php echo form_open('home/login',array('class' => 'navbar-form navbar-right')); ?>
         <?php if($user_access==1){ ?>
                 <div class="form-group">
-		<label class="control-label">Hello, user</label>
-		</div>
-		<button type="submit" class="btn btn-success">Sign in</button>
-	<?php } else {?>
-                <div class="form-group">
-		<input type="text" placeholder="Username" class="form-control">
-		</div>
-		<div class="form-group">
-		<input type="password" placeholder="Password" class="form-control">
+		<p class="control-label">Hello, user</p>
+                <input type="hidden" name="username" value="logout">
 		</div>
 		<button type="submit" class="btn btn-success">Sign out</button>
+	<?php } else {?>
+                <div class="form-group">
+                  <input type="text" placeholder="Username" class="form-control" name="username">
+                </div>
+                <div class="form-group">
+                  <input type="password" placeholder="Password" class="form-control" name="password">
+                </div>
+                <button type="submit" class="btn btn-success">Sign in</button>
                 <?php } ?>
           </form>
         </div>

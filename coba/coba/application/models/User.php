@@ -14,7 +14,7 @@ Class User extends CI_Model
 
    if ($query->num_rows() != 1)
       return -1;
-    return $query->row();
+    return $query->result_array();
  }
 
 }
